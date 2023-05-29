@@ -1,0 +1,21 @@
+[package]
+name = "libdummyadd"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "dummyadd"
+crate-type = ["staticlib", "cdylib"]
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+strip = true
+
+[package.metadata.generate-rpm]
+assets = [
+    { source = "target/release/libdummyadd.so", dest = "/usr/lib64/libdummyadd.so", mode = "644"},
+]
+auto-req = "no"

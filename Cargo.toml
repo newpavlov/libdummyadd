@@ -2,6 +2,8 @@
 name = "libdummyadd"
 version = "0.1.0"
 edition = "2021"
+license = "UNLICENSE"
+description = "Dummy library for testing RPM generation"
 
 [lib]
 name = "dummyadd"
